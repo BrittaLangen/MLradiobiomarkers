@@ -144,7 +144,7 @@ yhats <- predict(m_kknn, newdata = X_test, type = "raw")
 
 m_kknnCM <- confusionMatrix(yhats, y_test)
 
-# save results; rbind formaterat output from confusion matrix 
+# save results; rbind formatted output from confusion matrix 
 tmp <- rbind(as.data.frame(m_kknnCM$overall) %>% tibble::rownames_to_column(., "Measure") %>% slice(1:2) %>% 
                dplyr::rename(m_kknn = "m_kknnCM$overall"), 
              as.data.frame(m_kknnCM$byClass) %>% tibble::rownames_to_column(., "Measure") %>% slice(1:2) %>% 
@@ -212,7 +212,7 @@ yhats <- predict(m_glmnet, newdata = X_test, type = "raw")
 
 m_glmnetCM <- confusionMatrix(yhats, y_test); m_glmnetCM
 
-# save results; rbind formaterat output from confusion matrix 
+# save results; rbind formatted output from confusion matrix 
 tmp <- rbind(as.data.frame(m_glmnetCM$overall) %>% tibble::rownames_to_column(., "Measure") %>% slice(1:2) %>% 
                dplyr::rename(m_glmnet = "m_glmnetCM$overall"), 
              as.data.frame(m_glmnetCM$byClass) %>% tibble::rownames_to_column(., "Measure") %>% slice(1:2) %>% 
@@ -300,7 +300,7 @@ yhats <- predict(m_pls, newdata = X_test, type = "raw")
 
 m_plsCM <- confusionMatrix(yhats, y_test); m_plsCM
 
-# save results; rbind formaterat output from confusion matrix 
+# save results; rbind formatted output from confusion matrix 
 tmp <- rbind(as.data.frame(m_plsCM$overall) %>% tibble::rownames_to_column(., "Measure") %>% slice(1:2) %>% 
                dplyr::rename(m_pls = "m_plsCM$overall"), 
              as.data.frame(m_plsCM$byClass) %>% tibble::rownames_to_column(., "Measure") %>% slice(1:2) %>% 
